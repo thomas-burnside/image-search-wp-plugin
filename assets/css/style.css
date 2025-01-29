@@ -1,0 +1,151 @@
+.image-search-container {
+    font-family: "Montserrat", sans-serif;
+    background-color: white;
+    max-width: 1000px; /* Reduced from 1200px */
+    width: 90%; /* Makes it fluid while maintaining a limit */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Centering the title */
+.image-search-container h1 {
+    font-family: "Libre Baskerville";
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* Form container */
+.image-search-container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Adds space between input and button */
+    flex-wrap: wrap; /* Ensures wrapping on small screens */
+    margin-bottom: 20px;
+}
+
+/* Search Input */
+.image-search-container #search-input {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px; /* Prevents it from being too large on desktop */
+    border: 1px solid rgba(0,0,0,.2);
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+/* Search Button */
+.image-search-container #search-button {
+    background-color: #0097b2;
+    color: white;
+    padding: 10px 16px;
+    border: 2px solid #ffbd59;
+    font-size: 18px;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevents shrinking when wrapped */
+}
+
+/* Image results container */
+.image-search-container .search-results {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Better spacing */
+    margin: 0 auto;
+}
+
+/* Individual image result */
+.image-search-container .search-result {
+    width: calc(33.333% - 20px); /* Makes three columns with spacing */
+    background-color: white;
+    margin: 0;
+    padding: 10px;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.image-search-container .search-result:hover {
+    transform: scale(1.03); /* Subtle hover effect */
+}
+
+.image-search-container .search-result img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3; 
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+/* Image link */
+.image-search-container .search-result a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #202020;
+    margin-top: 5px;
+}
+
+/* Show more button */
+.image-search-container #show-more-button {
+    background-color: #0097b2;
+    color: white;
+    padding: 10px 16px;
+    border: 2px solid #ffbd59;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    margin: 30px auto;
+}
+
+/* ========== Tablet View (768px and below) ========== */
+@media screen and (max-width: 768px) {
+    .image-search-container .search-result {
+        width: calc(50% - 20px); /* Two columns */
+    }
+
+    .image-search-container h1 {
+        font-size: 28px;
+    }
+}
+
+/* ========== Mobile View (480px and below) ========== */
+@media screen and (max-width: 480px) {
+    .image-search-container {
+        width: 95%; /* Utilizes more screen space */
+        padding: 15px;
+    }
+
+    .image-search-container h1 {
+        font-size: 24px;
+    }
+
+    .image-search-container form {
+        flex-direction: column; /* Stack input and button */
+    }
+
+    .image-search-container #search-input {
+        width: 100%;
+        max-width: 100%; /* Full width on mobile */
+        font-size: 16px;
+    }
+
+    .image-search-container #search-button {
+        width: 100%; /* Button also full-width */
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .image-search-container .search-results {
+        justify-content: center;
+    }
+
+    .image-search-container .search-result {
+        width: 100%; /* Full width for images */
+    }
+}
